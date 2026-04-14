@@ -57,8 +57,8 @@
             border-bottom: 2px solid var(--verde-claro);
             display: inline-block;
             margin-bottom: 40px;
-            left: 50%;
             position: relative;
+            left: 50%;
             transform: translateX(-50%);
         }
 
@@ -80,18 +80,19 @@
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            object-fit: contain; /* Cambiado para que el logo no se corte */
+            object-fit: contain;
             border: 5px solid var(--verde-claro);
-            padding: 10px; /* Espacio para que el logo respire dentro del círculo */
-            background-color: white; /* Fondo blanco detrás del logo */
+            padding: 10px;
+            background-color: white;
         }
 
-        /* Título centrado en Sobre Mí */
-        #inicio h2 {
+        /* Títulos centrados */
+        #inicio h2, #contacto h2 {
             margin-left: auto;
             margin-right: auto;
             left: 0;
             transform: none;
+            display: table; /* Para que el borde inferior se ajuste al texto */
         }
 
         /* Servicios */
@@ -130,6 +131,7 @@
             border-radius: 25px;
             margin-top: 20px;
             transition: background 0.3s;
+            font-weight: bold;
         }
 
         .btn:hover {
@@ -164,7 +166,7 @@
 
     <section id="inicio">
         <div class="perfil-img-container">
-            <img src="https://healthycoach9-collab.github.io/israelnutricion/Israel López.png" alt="Logo Israel Nutrición" class="perfil-img">
+            <img src="Israel López.png" alt="Logo Israel Nutrición" class="perfil-img">
         </div>
         <h2>Sobre mí</h2>
         <p>Mi misión es ayudarte a alcanzar tus objetivos de salud y bienestar de manera sostenible, combinando ciencia, motivación y hábitos que realmente funcionan en tu día a día.</p>
@@ -205,7 +207,7 @@
     <section id="contacto">
         <h2>Contacto</h2>
         <p>¿Hablamos? Elige la vía que prefieras:</p>
-        <a href="mailto:healthycoach9@gmail.com" class="btn btn-email">Correo electrónico</a>
+        <a href="mailto:healthycoach9@gmail.com" class="btn btn-email">Enviar Correo</a>
         <a href="https://api.whatsapp.com/send/?phone=34693531770&text&type=phone_number&app_absent=0" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
     </section>
 
