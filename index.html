@@ -3,150 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Healthy Coach | Tu Bienestar, Mi Meta</title>
+    <title>Israel Nutrición | Dietética y Entrenamiento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos Generales */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+        :root {
+            --verde-oscuro: #2d5a27;
+            --verde-claro: #8bc34a;
+            --blanco: #ffffff;
+            --gris-claro: #f4f4f4;
         }
 
-        /* Encabezado */
-        header {
-            background: #2d5a27; /* Verde oscuro */
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-            position: sticky;
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* Navegación */
+        nav {
+            background: var(--verde-oscuro);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
+            display: flex;
+            justify-content: center;
         }
 
         nav a {
             color: white;
-            margin: 0 15px;
             text-decoration: none;
+            margin: 0 15px;
             font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
-        /* Sección Hero (Inicio) */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1000');
+        /* Secciones Generales */
+        section {
+            padding: 100px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--verde-oscuro);
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--verde-claro);
+            display: inline-block;
+            margin-bottom: 40px;
+            left: 50%;
+            position: relative;
+            transform: translateX(-50%);
+        }
+
+        /* Inicio / Sobre Mí */
+        #inicio {
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1000');
             background-size: cover;
             background-position: center;
-            height: 400px;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             text-align: center;
         }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
-
-        /* Contenedor Principal */
-        .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 20px;
+        .perfil-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid var(--verde-claro);
         }
 
         /* Servicios */
-        .servicios {
+        .grid-servicios {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            margin-top: 30px;
         }
 
         .card {
-            background: white;
+            background: var(--gris-claro);
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 15px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-align: center;
-            border-top: 5px solid #4CAF50;
         }
 
-        /* Botón de Contacto */
-        .btn-contacto {
+        .card h3 {
+            color: var(--verde-oscuro);
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .precio-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .btn {
             display: inline-block;
-            background: #4CAF50;
+            padding: 12px 25px;
+            background: var(--verde-oscuro);
             color: white;
-            padding: 10px 25px;
             text-decoration: none;
             border-radius: 25px;
             margin-top: 20px;
             transition: background 0.3s;
         }
 
-        .btn-contacto:hover { background: #388E3C; }
+        .btn:hover {
+            background: var(--verde-claro);
+        }
+
+        /* Contacto */
+        #contacto {
+            text-align: center;
+            background: var(--gris-claro);
+        }
+
+        .btn-whatsapp { background: #25D366; }
+        .btn-email { background: #ea4335; }
 
         footer {
-            background: #333;
-            color: white;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
+            padding: 20px;
+            background: #222;
+            color: white;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-    </header>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
 
-    <section id="inicio" class="hero">
-        <h1>Healthy Coach</h1>
-        <p>Transforma tu vida con nutrición consciente y entrenamiento personalizado</p>
-        <a href="#contacto" class="btn-contacto">Empieza Hoy</a>
+    <section id="inicio">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=400" alt="Israel Nutrición" class="perfil-img">
+        <h2>Sobre mí</h2>
+        <p>Mi misión es ayudarte a alcanzar tus objetivos de salud y bienestar de manera sostenible, combinando ciencia, motivación y hábitos que realmente funcionan en tu día a día.</p>
+        <p>Con años de formación como Técnico Superior en Dietética y Entrenador Personal y experiencia guiando a personas con diferentes metas, desde mejorar la energía y la composición corporal, hasta optimizar el rendimiento deportivo. He aprendido que cada cuerpo es único y requiere un enfoque individualizado.</p>
+        <p>Aquí no encontrarás soluciones genéricas ni dietas imposibles de seguir. Mi compromiso es ofrecer asesorías personalizadas, prácticas y basadas en evidencia, para que puedas disfrutar del proceso mientras transformas tu salud.</p>
+        <p>Si quieres sentirte más fuerte, con más energía y en control de tus hábitos, estoy aquí para acompañarte en cada paso del camino.</p>
     </section>
 
-    <div class="container">
-        
-        <section id="sobre-mi">
-            <h2>Bienvenido a tu cambio</h2>
-            <p>En Healthy Coach te ayudamos a alcanzar tu mejor versión. Basándonos en la <strong>Nutrición Emocional</strong> y el cambio de hábitos, diseñamos planes que se adaptan a tu ritmo de vida, no al revés.</p>
-        </section>
-
-        <section id="servicios">
-            <h2 style="text-align: center;">Nuestros Servicios</h2>
-            <div class="servicios">
-                <div class="card">
-                    <h3>Nutrición</h3>
-                    <p>Planes de alimentación personalizados para mejorar tu energía y salud.</p>
-                </div>
-                <div class="card">
-                    <h3>Entrenamiento</h3>
-                    <p>Rutinas adaptadas a tu nivel, ya sea en casa o en el gimnasio.</p>
-                </div>
-                <div class="card">
-                    <h3>Mindfulness</h3>
-                    <p>Gestión del estrés y ansiedad relacionada con la comida.</p>
-                </div>
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="grid-servicios">
+            <div class="card">
+                <h3>Presencial</h3>
+                <div class="precio-item"><span>1ª consulta</span> <span>GRATIS</span></div>
+                <div class="precio-item"><span>Plan de dieta</span> <span>30€/mes</span></div>
+                <div class="precio-item"><span>Plan dieta + antropometría</span> <span>40€/mes</span></div>
+                <div class="precio-item"><span>Plan dieta + entreno</span> <span>50€/mes</span></div>
+                <div class="precio-item"><span>Pack completo</span> <span>80€/mes</span></div>
             </div>
-        </section>
+            <div class="card">
+                <h3>Online</h3>
+                <div class="precio-item"><span>1ª consulta*</span> <span>GRATIS</span></div>
+                <div class="precio-item"><span>Plan de dieta</span> <span>25€/mes</span></div>
+                <div class="precio-item"><span>Plan dieta + antropometría*</span> <span>35€/mes</span></div>
+                <div class="precio-item"><span>Plan dieta + entreno</span> <span>45€/mes</span></div>
+                <div class="precio-item"><span>Pack completo*</span> <span>75€/mes</span></div>
+                <p style="font-size: 0.7rem; margin-top: 10px;">*La primera consulta y la antropometría es presencial.</p>
+            </div>
+        </div>
 
-        <section id="contacto" style="text-align: center; margin-top: 50px;">
-            <h2>¿Listo para el siguiente nivel?</h2>
-            <p>Escríbeme para una asesoría inicial gratuita.</p>
-            <p><strong>Email:</strong> contacto@healthycoach.com</p>
-            <a href="mailto:contacto@healthycoach.com" class="btn-contacto">Enviar un Correo</a>
-        </section>
+        <div style="text-align: center; margin-top: 40px;">
+            <h3>Formulario</h3>
+            <p>Si estás interesado en contratar algún servicio, rellena este formulario:</p>
+            <a href="https://form.typeform.com/to/SPBOixNY" target="_blank" class="btn">Formulario</a>
+        </div>
+    </section>
 
-    </div>
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Hablamos? Elige la vía que prefieras:</p>
+        <a href="mailto:healthycoach9@gmail.com" class="btn btn-email">Correo electrónico</a>
+        <a href="https://api.whatsapp.com/send/?phone=34693531770&text&type=phone_number&app_absent=0" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+    </section>
 
     <footer>
-        <p>&copy; 2024 Healthy Coach - Todos los derechos reservados.</p>
+        &copy; 2026 Israel Nutrición - Salud y Rendimiento.
     </footer>
 
 </body>
