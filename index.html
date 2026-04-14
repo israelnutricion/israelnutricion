@@ -48,7 +48,6 @@
             margin: auto;
         }
 
-        /* Títulos centrados para todas las secciones */
         h2 {
             display: block;
             text-align: center;
@@ -91,42 +90,42 @@
 
         .grid-servicios {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
             margin-bottom: 30px;
         }
 
         .card {
             background: var(--gris-claro);
-            padding: 20px;
+            padding: 25px;
             border-radius: 15px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
         }
 
         .card h3 {
             color: var(--verde-oscuro);
-            border-bottom: 1px solid #ccc;
+            border-bottom: 2px solid var(--verde-claro);
             padding-bottom: 10px;
+            margin-top: 0;
             text-align: center;
+            font-size: 1.2rem;
         }
 
         .precio-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 5px;
         }
 
-        /* Tabla de Bonos */
-        .bonos-container {
-            background: var(--verde-oscuro);
-            color: white;
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 30px;
+        .precio-item span:last-child {
+            font-weight: bold;
+            color: var(--verde-oscuro);
         }
-
-        .bonos-container h3 { text-align: center; margin-top: 0; }
 
         .btn {
             display: inline-block;
@@ -135,9 +134,11 @@
             color: white;
             text-decoration: none;
             border-radius: 25px;
-            margin-top: 20px;
+            margin-top: 10px;
             transition: background 0.3s;
             font-weight: bold;
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover { background: var(--verde-claro); }
@@ -169,7 +170,7 @@
         </div>
         <h2>Sobre mí</h2>
         <p>Mi misión es ayudarte a alcanzar tus objetivos de salud y bienestar de manera sostenible, combinando ciencia, motivación y hábitos que realmente funcionan en tu día a día.</p>
-        <p>Con años de formación como Técnico Superior en Dietética y Entrenador Personal y experiencia guiando a personas con diferentes metas, desde mejorar la energía y la composición corporal, hasta optimizar el rendimiento deportivo.</p>
+        <p>Con años de formación como Técnico Superior en Dietética y Entrenador Personal y experiencia guiando a personas con diferentes metas, he aprendido que cada cuerpo es único y requiere un enfoque individualizado.</p>
         <p>Aquí no encontrarás soluciones genéricas ni dietas imposibles de seguir. Mi compromiso es ofrecer asesorías personalizadas, prácticas y basadas en evidencia.</p>
     </section>
 
@@ -180,25 +181,28 @@
                 <h3>Presencial</h3>
                 <div class="precio-item"><span>1ª consulta</span> <span>GRATIS</span></div>
                 <div class="precio-item"><span>Plan de dieta</span> <span>30€/mes</span></div>
-                <div class="precio-item"><span>Plan dieta + antropometría</span> <span>40€/mes</span></div>
-                <div class="precio-item"><span>Plan dieta + entreno</span> <span>50€/mes</span></div>
+                <div class="precio-item"><span>Dieta + Antropometría</span> <span>40€/mes</span></div>
+                <div class="precio-item"><span>Dieta + Entreno</span> <span>50€/mes</span></div>
                 <div class="precio-item"><span>Pack completo</span> <span>80€/mes</span></div>
             </div>
+
             <div class="card">
                 <h3>Online</h3>
                 <div class="precio-item"><span>1ª consulta*</span> <span>GRATIS</span></div>
                 <div class="precio-item"><span>Plan de dieta</span> <span>25€/mes</span></div>
-                <div class="precio-item"><span>Plan dieta + antropometría*</span> <span>35€/mes</span></div>
-                <div class="precio-item"><span>Plan dieta + entreno</span> <span>45€/mes</span></div>
+                <div class="precio-item"><span>Dieta + Antropo.*</span> <span>35€/mes</span></div>
+                <div class="precio-item"><span>Dieta + Entreno</span> <span>45€/mes</span></div>
                 <div class="precio-item"><span>Pack completo*</span> <span>75€/mes</span></div>
+                <p style="font-size: 0.7rem; color: #666; margin-top: 5px;">*Consulta y antropometría presencial.</p>
             </div>
-        </div>
 
-        <div class="bonos-container">
-            <h3>BONOS Y DESCUENTOS</h3>
-            <div class="precio-item"><span>Plan contratado 3 meses</span> <span>10% DTO</span></div>
-            <div class="precio-item"><span>Plan contratado 6 meses</span> <span>15% DTO</span></div>
-            <div class="precio-item"><span>Plan contratado 12 meses</span> <span>30% DTO</span></div>
+            <div class="card">
+                <h3>Bonos y Dto</h3>
+                <div class="precio-item"><span>Plan 3 meses</span> <span>10% DTO</span></div>
+                <div class="precio-item"><span>Plan 6 meses</span> <span>15% DTO</span></div>
+                <div class="precio-item"><span>Plan 12 meses</span> <span>30% DTO</span></div>
+                <p style="font-size: 0.8rem; text-align: center; margin-top: 10px;">¡Ahorra comprometiéndote con tu cambio!</p>
+            </div>
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
@@ -210,9 +214,13 @@
 
     <section id="contacto">
         <h2>Contacto</h2>
-        <p>Si el botón de correo no abre tu app, puedes escribirme directamente a: <b>healthycoach9@gmail.com</b></p>
-        <a href="mailto:healthycoach9@gmail.com" class="btn btn-email">Enviar Correo</a>
+        <p>Escríbeme por la vía que prefieras:</p>
+        
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=healthycoach9@gmail.com&su=Información Servicios Israel Nutrición" target="_blank" class="btn btn-email">Enviar Correo (Gmail)</a>
+        
         <a href="https://api.whatsapp.com/send/?phone=34693531770" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+        
+        <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">Email: healthycoach9@gmail.com</p>
     </section>
 
     <footer>
