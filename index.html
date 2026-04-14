@@ -22,7 +22,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Navegación */
         nav {
             background: var(--verde-oscuro);
             padding: 1rem;
@@ -43,26 +42,30 @@
             font-size: 0.9rem;
         }
 
-        /* Secciones Generales */
         section {
             padding: 100px 20px;
             max-width: 1000px;
             margin: auto;
         }
 
+        /* Títulos centrados para todas las secciones */
         h2 {
+            display: block;
             text-align: center;
             color: var(--verde-oscuro);
             text-transform: uppercase;
-            border-bottom: 2px solid var(--verde-claro);
-            display: inline-block;
             margin-bottom: 40px;
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
         }
 
-        /* Inicio / Sobre Mí */
+        h2::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--verde-claro);
+            margin: 10px auto;
+        }
+
         #inicio {
             background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1000');
             background-size: cover;
@@ -86,20 +89,11 @@
             background-color: white;
         }
 
-        /* Títulos centrados */
-        #inicio h2, #contacto h2 {
-            margin-left: auto;
-            margin-right: auto;
-            left: 0;
-            transform: none;
-            display: table; /* Para que el borde inferior se ajuste al texto */
-        }
-
-        /* Servicios */
         .grid-servicios {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
+            margin-bottom: 30px;
         }
 
         .card {
@@ -113,6 +107,7 @@
             color: var(--verde-oscuro);
             border-bottom: 1px solid #ccc;
             padding-bottom: 10px;
+            text-align: center;
         }
 
         .precio-item {
@@ -121,6 +116,17 @@
             margin-bottom: 8px;
             font-size: 0.9rem;
         }
+
+        /* Tabla de Bonos */
+        .bonos-container {
+            background: var(--verde-oscuro);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .bonos-container h3 { text-align: center; margin-top: 0; }
 
         .btn {
             display: inline-block;
@@ -134,18 +140,11 @@
             font-weight: bold;
         }
 
-        .btn:hover {
-            background: var(--verde-claro);
-        }
-
-        /* Contacto */
-        #contacto {
-            text-align: center;
-            background: var(--gris-claro);
-        }
-
+        .btn:hover { background: var(--verde-claro); }
         .btn-whatsapp { background: #25D366; }
         .btn-email { background: #ea4335; }
+
+        #contacto { text-align: center; background: var(--gris-claro); }
 
         footer {
             text-align: center;
@@ -170,9 +169,8 @@
         </div>
         <h2>Sobre mí</h2>
         <p>Mi misión es ayudarte a alcanzar tus objetivos de salud y bienestar de manera sostenible, combinando ciencia, motivación y hábitos que realmente funcionan en tu día a día.</p>
-        <p>Con años de formación como Técnico Superior en Dietética y Entrenador Personal y experiencia guiando a personas con diferentes metas, desde mejorar la energía y la composición corporal, hasta optimizar el rendimiento deportivo. He aprendido que cada cuerpo es único y requiere un enfoque individualizado.</p>
-        <p>Aquí no encontrarás soluciones genéricas ni dietas imposibles de seguir. Mi compromiso es ofrecer asesorías personalizadas, prácticas y basadas en evidencia, para que puedas disfrutar del proceso mientras transformas tu salud.</p>
-        <p>Si quieres sentirte más fuerte, con más energía y en control de tus hábitos, estoy aquí para acompañarte en cada paso del camino.</p>
+        <p>Con años de formación como Técnico Superior en Dietética y Entrenador Personal y experiencia guiando a personas con diferentes metas, desde mejorar la energía y la composición corporal, hasta optimizar el rendimiento deportivo.</p>
+        <p>Aquí no encontrarás soluciones genéricas ni dietas imposibles de seguir. Mi compromiso es ofrecer asesorías personalizadas, prácticas y basadas en evidencia.</p>
     </section>
 
     <section id="servicios">
@@ -193,26 +191,32 @@
                 <div class="precio-item"><span>Plan dieta + antropometría*</span> <span>35€/mes</span></div>
                 <div class="precio-item"><span>Plan dieta + entreno</span> <span>45€/mes</span></div>
                 <div class="precio-item"><span>Pack completo*</span> <span>75€/mes</span></div>
-                <p style="font-size: 0.7rem; margin-top: 10px;">*La primera consulta y la antropometría es presencial.</p>
             </div>
         </div>
 
+        <div class="bonos-container">
+            <h3>BONOS Y DESCUENTOS</h3>
+            <div class="precio-item"><span>Plan contratado 3 meses</span> <span>10% DTO</span></div>
+            <div class="precio-item"><span>Plan contratado 6 meses</span> <span>15% DTO</span></div>
+            <div class="precio-item"><span>Plan contratado 12 meses</span> <span>30% DTO</span></div>
+        </div>
+
         <div style="text-align: center; margin-top: 40px;">
-            <h3>Formulario</h3>
+            <h3>¿Hablamos?</h3>
             <p>Si estás interesado en contratar algún servicio, rellena este formulario:</p>
-            <a href="https://form.typeform.com/to/SPBOixNY" target="_blank" class="btn">Formulario</a>
+            <a href="https://form.typeform.com/to/SPBOixNY" target="_blank" class="btn">Abrir Formulario</a>
         </div>
     </section>
 
     <section id="contacto">
         <h2>Contacto</h2>
-        <p>¿Hablamos? Elige la vía que prefieras:</p>
+        <p>Si el botón de correo no abre tu app, puedes escribirme directamente a: <b>healthycoach9@gmail.com</b></p>
         <a href="mailto:healthycoach9@gmail.com" class="btn btn-email">Enviar Correo</a>
-        <a href="https://api.whatsapp.com/send/?phone=34693531770&text&type=phone_number&app_absent=0" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+        <a href="https://api.whatsapp.com/send/?phone=34693531770" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
     </section>
 
     <footer>
-        &copy; 2026 Israel Nutrición - Salud y Rendimiento.
+        &copy; 2026 Israel Nutrición - Nutrición y Deporte.
     </footer>
 
 </body>
