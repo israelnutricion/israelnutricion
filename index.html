@@ -64,19 +64,34 @@
 
         /* Inicio / Sobre Mí */
         #inicio {
-            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1000');
+            background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1000');
             background-size: cover;
             background-position: center;
             text-align: center;
+        }
+
+        .perfil-img-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
         }
 
         .perfil-img {
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
+            object-fit: contain; /* Cambiado para que el logo no se corte */
             border: 5px solid var(--verde-claro);
+            padding: 10px; /* Espacio para que el logo respire dentro del círculo */
+            background-color: white; /* Fondo blanco detrás del logo */
+        }
+
+        /* Título centrado en Sobre Mí */
+        #inicio h2 {
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            transform: none;
         }
 
         /* Servicios */
@@ -148,7 +163,9 @@
     </nav>
 
     <section id="inicio">
-        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=400" alt="Israel Nutrición" class="perfil-img">
+        <div class="perfil-img-container">
+            <img src="https://healthycoach9-collab.github.io/israelnutricion/image_3.png" alt="Logo Israel Nutrición" class="perfil-img">
+        </div>
         <h2>Sobre mí</h2>
         <p>Mi misión es ayudarte a alcanzar tus objetivos de salud y bienestar de manera sostenible, combinando ciencia, motivación y hábitos que realmente funcionan en tu día a día.</p>
         <p>Con años de formación como Técnico Superior en Dietética y Entrenador Personal y experiencia guiando a personas con diferentes metas, desde mejorar la energía y la composición corporal, hasta optimizar el rendimiento deportivo. He aprendido que cada cuerpo es único y requiere un enfoque individualizado.</p>
