@@ -91,20 +91,24 @@
 
         .grid-servicios {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             margin-bottom: 30px;
         }
 
         .card {
             background: var(--gris-claro);
-            padding: 25px;
+            padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
         }
 
         .card h3 {
@@ -112,15 +116,28 @@
             border-bottom: 2px solid var(--verde-claro);
             padding-bottom: 10px;
             text-align: center;
+            margin-top: 0;
         }
 
-        .precio-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .card ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
             font-size: 0.95rem;
-            border-bottom: 1px dashed #ccc;
-            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .card ul li::before {
+            content: "✓";
+            color: var(--verde-claro);
+            font-weight: bold;
+            margin-right: 10px;
         }
 
         .dropdown {
@@ -148,33 +165,35 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #f9f9f9;
+            background-color: #ffffff;
             min-width: 100%;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
             z-index: 1;
-            border-radius: 10px;
-            bottom: 50px;
+            border-radius: 12px;
+            bottom: 55px;
+            border: 1px solid #eee;
             overflow: hidden;
         }
 
         .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
+            color: #333;
+            padding: 14px 16px;
             text-decoration: none;
             display: block;
             font-size: 0.9rem;
             font-weight: bold;
+            transition: background 0.2s;
         }
 
-        .dropdown-content a:hover { background-color: #ddd; }
+        .dropdown-content a:hover { background-color: #f1f1f1; }
         .dropdown:hover .dropdown-content { display: block; }
 
-        .contact-email { color: #0078d4 !important; } /* Color azul Hotmail/Outlook */
+        .contact-email { color: #0078d4 !important; }
         .contact-wa { color: #25D366 !important; }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             background: #222;
             color: white;
             font-size: 0.8rem;
@@ -202,78 +221,71 @@
         <h2>Nuestros Servicios</h2>
         <div class="grid-servicios">
             
+            <!-- Entrenamiento Personal -->
             <div class="card">
                 <div>
-                    <h3>Presencial</h3>
-                    <div class="precio-item"><span>1ª consulta</span> <span>GRATIS</span></div>
-                    <div class="precio-item"><span>Plan de dieta</span> <span>30€/mes</span></div>
-                    <div class="precio-item"><span>Dieta + Antropometría</span> <span>40€/mes</span></div>
-                    <div class="precio-item"><span>Dieta + Entreno</span> <span>50€/mes</span></div>
-                    <div class="precio-item"><span>Pack completo</span> <span>80€/mes</span></div>
+                    <h3>Entrenamiento Personal</h3>
+                    <ul>
+                        <li>Valoración inicial</li>
+                        <li>Planificación de mesociclos</li>
+                        <li>Entrenamiento funcional</li>
+                        <li>Entrenamiento de fuerza</li>
+                        <li>Corrección de técnica</li>
+                        <li>Motivación</li>
+                        <li>Atención personalizada</li>
+                    </ul>
                 </div>
                 <div class="dropdown">
                     <button class="btn-contactar">Contactar</button>
                     <div class="dropdown-content">
-                        <a href="https://outlook.live.com/owa/?path=/mail/action/compose&to=israelnutricion@hotmail.com&subject=Interés en Servicio Presencial" target="_blank" class="contact-email">Vía Email</a>
-                        <a href="https://api.whatsapp.com/send/?phone=34693531770&text=Hola Israel, me interesa el servicio Presencial" target="_blank" class="contact-wa">Vía WhatsApp</a>
+                        <a href="https://outlook.live.com/owa/?path=/mail/action/compose&to=israelnutricion@hotmail.com&subject=Interés en Entrenamiento Personal" target="_blank" class="contact-email">Vía Email (Hotmail)</a>
+                        <a href="https://api.whatsapp.com/send/?phone=34693531770&text=Hola Israel, me interesa el servicio de Entrenamiento Personal" target="_blank" class="contact-wa">Vía WhatsApp</a>
                     </div>
                 </div>
             </div>
 
+            <!-- Nutrición -->
             <div class="card">
                 <div>
-                    <h3>Online</h3>
-                    <div class="precio-item"><span>1ª consulta*</span> <span>GRATIS</span></div>
-                    <div class="precio-item"><span>Plan de dieta</span> <span>25€/mes</span></div>
-                    <div class="precio-item"><span>Dieta + Antropo.*</span> <span>35€/mes</span></div>
-                    <div class="precio-item"><span>Dieta + Entreno</span> <span>45€/mes</span></div>
-                    <div class="precio-item"><span>Pack completo*</span> <span>75€/mes</span></div>
+                    <h3>Nutrición</h3>
+                    <ul>
+                        <li>Entrevista nutricional</li>
+                        <li>Pesaje de bioimpedancia</li>
+                        <li>Medición de perímetros</li>
+                        <li>Antropometría</li>
+                        <li>Revisiones mensuales</li>
+                        <li>Dieta personalizada</li>
+                        <li>Atención integral y personalizada</li>
+                    </ul>
                 </div>
                 <div class="dropdown">
                     <button class="btn-contactar">Contactar</button>
                     <div class="dropdown-content">
-                        <a href="https://outlook.live.com/owa/?path=/mail/action/compose&to=israelnutricion@hotmail.com&subject=Interés en Servicio Online" target="_blank" class="contact-email">Vía Email</a>
-                        <a href="https://api.whatsapp.com/send/?phone=34693531770&text=Hola Israel, me interesa el servicio Online" target="_blank" class="contact-wa">Vía WhatsApp</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div>
-                    <h3>Bonos y Dto</h3>
-                    <div class="precio-item"><span>Plan 3 meses</span> <span>10% DTO</span></div>
-                    <div class="precio-item"><span>Plan 6 meses</span> <span>15% DTO</span></div>
-                    <div class="precio-item"><span>Plan 12 meses</span> <span>30% DTO</span></div>
-                    <p style="font-size: 0.8rem; text-align: center; margin-top: 10px; color: #666;">¡Ahorra con compromiso!</p>
-                </div>
-                <div class="dropdown">
-                    <button class="btn-contactar">Contactar</button>
-                    <div class="dropdown-content">
-                        <a href="https://outlook.live.com/owa/?path=/mail/action/compose&to=israelnutricion@hotmail.com&subject=Interés en Bonos de Descuento" target="_blank" class="contact-email">Vía Email</a>
-                        <a href="https://api.whatsapp.com/send/?phone=34693531770&text=Hola Israel, quiero más info sobre los bonos" target="_blank" class="contact-wa">Vía WhatsApp</a>
+                        <a href="https://outlook.live.com/owa/?path=/mail/action/compose&to=israelnutricion@hotmail.com&subject=Interés en Nutrición" target="_blank" class="contact-email">Vía Email (Hotmail)</a>
+                        <a href="https://api.whatsapp.com/send/?phone=34693531770&text=Hola Israel, me interesa el servicio de Nutrición" target="_blank" class="contact-wa">Vía WhatsApp</a>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <div style="text-align: center; margin-top: 40px;">
-            <h3>¿Prefieres rellenar un formulario?</h3>
-            <p>Si tienes claro lo que buscas, rellena este formulario y yo te contactaré:</p>
-            <a href="https://form.typeform.com/to/SPBOixNY" target="_blank" class="btn-contactar" style="display:inline-block; width:auto; padding: 12px 40px;">Abrir Formulario</a>
+        <div style="text-align: center; margin-top: 50px;">
+            <h3>¿Hablamos?</h3>
+            <p>Si tienes claro lo que buscas o quieres una asesoría a medida, rellena este formulario:</p>
+            <a href="https://form.typeform.com/to/SPBOixNY" target="_blank" class="btn-contactar" style="display:inline-block; width:auto; padding: 12px 40px;">Abrir Formulario de Registro</a>
         </div>
     </section>
 
     <section id="contacto" style="text-align: center; background: var(--gris-claro);">
-        <h2>Contacto</h2>
-        <p>Escríbeme por la vía que prefieras:</p>
-        <a href="https://outlook.live.com/owa/?path=/mail/action/compose&to=israelnutricion@hotmail.com&subject=Información Servicios Israel Nutrición" target="_blank" class="btn-contactar" style="display:inline-block; width:auto; background:#0078d4; margin: 10px;">Enviar Correo (Outlook/Hotmail)</a>
-        <a href="https://api.whatsapp.com/send/?phone=34693531770" target="_blank" class="btn-contactar" style="display:inline-block; width:auto; background:#25D366; margin: 10px;">WhatsApp</a>
-        <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">Email: israelnutricion@hotmail.com</p>
+        <h2>Contacto Directo</h2>
+        <p>Elige el medio que te resulte más cómodo:</p>
+        <a href="https://outlook.live.com/owa/?path=/mail/action/compose&to=israelnutricion@hotmail.com&subject=Consulta Web Israel Nutrición" target="_blank" class="btn-contactar" style="display:inline-block; width:auto; background:#0078d4; margin: 10px;">Enviar Email</a>
+        <a href="https://api.whatsapp.com/send/?phone=34693531770" target="_blank" class="btn-contactar" style="display:inline-block; width:auto; background:#25D366; margin: 10px;">WhatsApp Directo</a>
+        <p style="margin-top: 20px; font-size: 1rem; color: #333;"><b>Email:</b> israelnutricion@hotmail.com</p>
     </section>
 
     <footer>
-        &copy; 2026 Israel Nutrición - Nutrición y Entrenamiento.
+        &copy; 2026 Israel Nutrición - Salud y Rendimiento. Todos los derechos reservados.
     </footer>
 
 </body>
